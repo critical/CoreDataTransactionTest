@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 #import <CoreData/CoreData.h>
+#import "ZOFMocController.h"
 
-@interface ZOFMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface ZOFMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+    ZOFMocController *_mocController;
+}
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

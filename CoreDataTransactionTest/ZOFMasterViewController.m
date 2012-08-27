@@ -9,8 +9,11 @@
 #import "ZOFMasterViewController.h"
 
 #import "ZOFDetailViewController.h"
+#import "ZOFFillDb.h"
 
-@interface ZOFMasterViewController ()
+@interface ZOFMasterViewController () {
+    ZOFFillDb *_filler;
+}
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
@@ -24,11 +27,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _mocController = [ZOFMocController sharedInstance];
+    _filler = [[ZOFFillDb alloc] init];
+    _filler.mocController = _mocController;
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (![_filler operationExec]) {
+        [_filler fillDbOfEntity:@"Person" howManyInsert:10 withSleep:YES];
+    }
 }
 
 - (void)viewDidUnload
@@ -50,7 +64,10 @@
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    [newManagedObject setValue:[NSString stringWithFormat:@"first%d", rand()%10] forKey:@"firstname"];
+    [newManagedObject setValue:[NSString stringWithFormat:@"last%d", rand()%10] forKey:@"lastname"];
+    [newManagedObject setValue:[NSString stringWithFormat:@"t%d", rand()%10] forKey:@"title"];
+    [newManagedObject setValue:[[NSDate date] dateByAddingTimeInterval:(rand()%5)] forKey:@"birthdate"];
     
     // Save the context.
     NSError *error = nil;
@@ -129,21 +146,21 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:_mocController.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastname" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:_mocController.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -221,7 +238,8 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [[object valueForKey:@"title"] description];
+    cell.detailTextLabel.text = [[object valueForKey:@"lastname"] description];
 }
 
 @end

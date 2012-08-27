@@ -31,7 +31,13 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"dd/mm/yyyy"];
+        NSString *firstName = [self.detailItem valueForKey:@"firstname"];
+        NSString *lastName = [self.detailItem valueForKey:@"lastname"];
+        NSDate *birthDate = [self.detailItem valueForKey:@"birthdate"];
+        NSString *person = [NSString stringWithFormat:@"%@ %@, %@", firstName, lastName, [df stringFromDate:birthDate]];
+        self.detailDescriptionLabel.text = [person copy];
     }
 }
 

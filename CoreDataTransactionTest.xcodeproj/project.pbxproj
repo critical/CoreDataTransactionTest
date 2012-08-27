@@ -18,6 +18,10 @@
 		554F737115EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 554F736F15EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld */; };
 		554F737415EBCAF8008D732A /* ZOFMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F737315EBCAF8008D732A /* ZOFMasterViewController.m */; };
 		554F737715EBCAF8008D732A /* ZOFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F737615EBCAF8008D732A /* ZOFDetailViewController.m */; };
+		554F738815EBD970008D732A /* ZOFMocController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F738715EBD970008D732A /* ZOFMocController.m */; };
+		554F738D15EBE19E008D732A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F738C15EBE19E008D732A /* Person.m */; };
+		554F739015EBE19F008D732A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F738F15EBE19F008D732A /* Event.m */; };
+		5566BC9815EBE9790033A1CB /* ZOFFillDb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5566BC9715EBE9790033A1CB /* ZOFFillDb.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,14 @@
 		554F737315EBCAF8008D732A /* ZOFMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZOFMasterViewController.m; sourceTree = "<group>"; };
 		554F737515EBCAF8008D732A /* ZOFDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZOFDetailViewController.h; sourceTree = "<group>"; };
 		554F737615EBCAF8008D732A /* ZOFDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZOFDetailViewController.m; sourceTree = "<group>"; };
+		554F738615EBD970008D732A /* ZOFMocController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFMocController.h; sourceTree = "<group>"; };
+		554F738715EBD970008D732A /* ZOFMocController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFMocController.m; sourceTree = "<group>"; };
+		554F738B15EBE19E008D732A /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		554F738C15EBE19E008D732A /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		554F738E15EBE19F008D732A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		554F738F15EBE19F008D732A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		5566BC9615EBE9790033A1CB /* ZOFFillDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFFillDb.h; sourceTree = "<group>"; };
+		5566BC9715EBE9790033A1CB /* ZOFFillDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFFillDb.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +100,17 @@
 			children = (
 				554F736915EBCAF8008D732A /* ZOFAppDelegate.h */,
 				554F736A15EBCAF8008D732A /* ZOFAppDelegate.m */,
+				554F738615EBD970008D732A /* ZOFMocController.h */,
+				554F738715EBD970008D732A /* ZOFMocController.m */,
+				5566BC9615EBE9790033A1CB /* ZOFFillDb.h */,
+				5566BC9715EBE9790033A1CB /* ZOFFillDb.m */,
 				554F736C15EBCAF8008D732A /* MainStoryboard.storyboard */,
 				554F737215EBCAF8008D732A /* ZOFMasterViewController.h */,
 				554F737315EBCAF8008D732A /* ZOFMasterViewController.m */,
 				554F737515EBCAF8008D732A /* ZOFDetailViewController.h */,
 				554F737615EBCAF8008D732A /* ZOFDetailViewController.m */,
 				554F736F15EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld */,
+				554F738A15EBE195008D732A /* Model */,
 				554F736115EBCAF8008D732A /* Supporting Files */,
 			);
 			path = CoreDataTransactionTest;
@@ -108,6 +125,17 @@
 				554F736815EBCAF8008D732A /* CoreDataTransactionTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		554F738A15EBE195008D732A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				554F738E15EBE19F008D732A /* Event.h */,
+				554F738F15EBE19F008D732A /* Event.m */,
+				554F738B15EBE19E008D732A /* Person.h */,
+				554F738C15EBE19E008D732A /* Person.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +207,10 @@
 				554F737115EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld in Sources */,
 				554F737415EBCAF8008D732A /* ZOFMasterViewController.m in Sources */,
 				554F737715EBCAF8008D732A /* ZOFDetailViewController.m in Sources */,
+				554F738815EBD970008D732A /* ZOFMocController.m in Sources */,
+				554F738D15EBE19E008D732A /* Person.m in Sources */,
+				554F739015EBE19F008D732A /* Event.m in Sources */,
+				5566BC9815EBE9790033A1CB /* ZOFFillDb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
