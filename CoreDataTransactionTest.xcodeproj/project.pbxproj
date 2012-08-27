@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		554F735915EBCAF8008D732A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735815EBCAF8008D732A /* UIKit.framework */; };
+		554F735B15EBCAF8008D732A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735A15EBCAF8008D732A /* Foundation.framework */; };
+		554F735D15EBCAF8008D732A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735C15EBCAF8008D732A /* CoreGraphics.framework */; };
+		554F735F15EBCAF8008D732A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735E15EBCAF8008D732A /* CoreData.framework */; };
+		554F736515EBCAF8008D732A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 554F736315EBCAF8008D732A /* InfoPlist.strings */; };
+		554F736715EBCAF8008D732A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F736615EBCAF8008D732A /* main.m */; };
+		554F736B15EBCAF8008D732A /* ZOFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F736A15EBCAF8008D732A /* ZOFAppDelegate.m */; };
+		554F736E15EBCAF8008D732A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554F736C15EBCAF8008D732A /* MainStoryboard.storyboard */; };
+		554F737115EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 554F736F15EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld */; };
+		554F737415EBCAF8008D732A /* ZOFMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F737315EBCAF8008D732A /* ZOFMasterViewController.m */; };
+		554F737715EBCAF8008D732A /* ZOFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F737615EBCAF8008D732A /* ZOFDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		554F735415EBCAF8008D732A /* CoreDataTransactionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTransactionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		554F735815EBCAF8008D732A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		554F735A15EBCAF8008D732A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		554F735C15EBCAF8008D732A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		554F735E15EBCAF8008D732A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		554F736215EBCAF8008D732A /* CoreDataTransactionTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreDataTransactionTest-Info.plist"; sourceTree = "<group>"; };
+		554F736415EBCAF8008D732A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		554F736615EBCAF8008D732A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		554F736815EBCAF8008D732A /* CoreDataTransactionTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreDataTransactionTest-Prefix.pch"; sourceTree = "<group>"; };
+		554F736915EBCAF8008D732A /* ZOFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZOFAppDelegate.h; sourceTree = "<group>"; };
+		554F736A15EBCAF8008D732A /* ZOFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZOFAppDelegate.m; sourceTree = "<group>"; };
+		554F736D15EBCAF8008D732A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		554F737015EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTransactionTest.xcdatamodel; sourceTree = "<group>"; };
+		554F737215EBCAF8008D732A /* ZOFMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZOFMasterViewController.h; sourceTree = "<group>"; };
+		554F737315EBCAF8008D732A /* ZOFMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZOFMasterViewController.m; sourceTree = "<group>"; };
+		554F737515EBCAF8008D732A /* ZOFDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZOFDetailViewController.h; sourceTree = "<group>"; };
+		554F737615EBCAF8008D732A /* ZOFDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZOFDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		554F735115EBCAF8008D732A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				554F735915EBCAF8008D732A /* UIKit.framework in Frameworks */,
+				554F735B15EBCAF8008D732A /* Foundation.framework in Frameworks */,
+				554F735D15EBCAF8008D732A /* CoreGraphics.framework in Frameworks */,
+				554F735F15EBCAF8008D732A /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		554F734915EBCAF8008D732A = {
+			isa = PBXGroup;
+			children = (
+				554F736015EBCAF8008D732A /* CoreDataTransactionTest */,
+				554F735715EBCAF8008D732A /* Frameworks */,
+				554F735515EBCAF8008D732A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		554F735515EBCAF8008D732A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				554F735415EBCAF8008D732A /* CoreDataTransactionTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		554F735715EBCAF8008D732A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				554F735815EBCAF8008D732A /* UIKit.framework */,
+				554F735A15EBCAF8008D732A /* Foundation.framework */,
+				554F735C15EBCAF8008D732A /* CoreGraphics.framework */,
+				554F735E15EBCAF8008D732A /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		554F736015EBCAF8008D732A /* CoreDataTransactionTest */ = {
+			isa = PBXGroup;
+			children = (
+				554F736915EBCAF8008D732A /* ZOFAppDelegate.h */,
+				554F736A15EBCAF8008D732A /* ZOFAppDelegate.m */,
+				554F736C15EBCAF8008D732A /* MainStoryboard.storyboard */,
+				554F737215EBCAF8008D732A /* ZOFMasterViewController.h */,
+				554F737315EBCAF8008D732A /* ZOFMasterViewController.m */,
+				554F737515EBCAF8008D732A /* ZOFDetailViewController.h */,
+				554F737615EBCAF8008D732A /* ZOFDetailViewController.m */,
+				554F736F15EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld */,
+				554F736115EBCAF8008D732A /* Supporting Files */,
+			);
+			path = CoreDataTransactionTest;
+			sourceTree = "<group>";
+		};
+		554F736115EBCAF8008D732A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				554F736215EBCAF8008D732A /* CoreDataTransactionTest-Info.plist */,
+				554F736315EBCAF8008D732A /* InfoPlist.strings */,
+				554F736615EBCAF8008D732A /* main.m */,
+				554F736815EBCAF8008D732A /* CoreDataTransactionTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		554F735315EBCAF8008D732A /* CoreDataTransactionTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 554F737A15EBCAF8008D732A /* Build configuration list for PBXNativeTarget "CoreDataTransactionTest" */;
+			buildPhases = (
+				554F735015EBCAF8008D732A /* Sources */,
+				554F735115EBCAF8008D732A /* Frameworks */,
+				554F735215EBCAF8008D732A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreDataTransactionTest;
+			productName = CoreDataTransactionTest;
+			productReference = 554F735415EBCAF8008D732A /* CoreDataTransactionTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		554F734B15EBCAF8008D732A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZOF;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = 01Factory;
+			};
+			buildConfigurationList = 554F734E15EBCAF8008D732A /* Build configuration list for PBXProject "CoreDataTransactionTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 554F734915EBCAF8008D732A;
+			productRefGroup = 554F735515EBCAF8008D732A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				554F735315EBCAF8008D732A /* CoreDataTransactionTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		554F735215EBCAF8008D732A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				554F736515EBCAF8008D732A /* InfoPlist.strings in Resources */,
+				554F736E15EBCAF8008D732A /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		554F735015EBCAF8008D732A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				554F736715EBCAF8008D732A /* main.m in Sources */,
+				554F736B15EBCAF8008D732A /* ZOFAppDelegate.m in Sources */,
+				554F737115EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld in Sources */,
+				554F737415EBCAF8008D732A /* ZOFMasterViewController.m in Sources */,
+				554F737715EBCAF8008D732A /* ZOFDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		554F736315EBCAF8008D732A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				554F736415EBCAF8008D732A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		554F736C15EBCAF8008D732A /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				554F736D15EBCAF8008D732A /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		554F737815EBCAF8008D732A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		554F737915EBCAF8008D732A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		554F737B15EBCAF8008D732A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreDataTransactionTest/CoreDataTransactionTest-Prefix.pch";
+				INFOPLIST_FILE = "CoreDataTransactionTest/CoreDataTransactionTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		554F737C15EBCAF8008D732A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreDataTransactionTest/CoreDataTransactionTest-Prefix.pch";
+				INFOPLIST_FILE = "CoreDataTransactionTest/CoreDataTransactionTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		554F734E15EBCAF8008D732A /* Build configuration list for PBXProject "CoreDataTransactionTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				554F737815EBCAF8008D732A /* Debug */,
+				554F737915EBCAF8008D732A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		554F737A15EBCAF8008D732A /* Build configuration list for PBXNativeTarget "CoreDataTransactionTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				554F737B15EBCAF8008D732A /* Debug */,
+				554F737C15EBCAF8008D732A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		554F736F15EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				554F737015EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodel */,
+			);
+			currentVersion = 554F737015EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodel */;
+			path = CoreDataTransactionTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 554F734B15EBCAF8008D732A /* Project object */;
+}
