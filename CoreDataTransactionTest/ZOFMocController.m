@@ -7,6 +7,7 @@
 //
 
 #import "ZOFMocController.h"
+#import "ZOFFillDb.h"
 
 @implementation ZOFMocController
 
@@ -41,7 +42,7 @@
 {
     self = [super init];
     if (self) {
-        //other init
+        _createDB = NO;
     }
     return self;
 }
@@ -61,6 +62,13 @@
         _managedObjectContext = [[NSManagedObjectContext alloc] init];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
+
+    if (_createDB) {
+        [ZOFFillDb sharedZOFFillDb].mocController = self;
+        [[ZOFFillDb sharedZOFFillDb] fillDbOfEntity:nil howManyInsert:-1 withSleep:NO];
+        _createDB = NO;
+    }
+
     return _managedObjectContext;
 }
 
@@ -85,7 +93,11 @@
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CoreDataTransactionTest.sqlite"];
-    
+   
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+        _createDB = YES;
+    }
+   
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {

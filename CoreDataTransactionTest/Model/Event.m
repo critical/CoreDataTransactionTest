@@ -2,7 +2,7 @@
 //  Event.m
 //  CoreDataTransactionTest
 //
-//  Created by Fabio Gomiero on 27/08/12.
+//  Created by Fabio Gomiero on 08/09/12.
 //  Copyright (c) 2012 01Factory. All rights reserved.
 //
 
@@ -11,7 +11,9 @@
 
 @implementation Event
 
-@dynamic timeStamp;
 @dynamic name;
+@dynamic timeStamp;
+@dynamic id_person;
+@dynamic a_id;
 
 @end

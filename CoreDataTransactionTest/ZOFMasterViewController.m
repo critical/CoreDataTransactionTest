@@ -9,10 +9,10 @@
 #import "ZOFMasterViewController.h"
 
 #import "ZOFDetailViewController.h"
-#import "ZOFFillDb.h"
+#import "ZOFPersonBean.h"
 
 @interface ZOFMasterViewController () {
-    ZOFFillDb *_filler;
+    //ZOFFillDb *_filler;
 }
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -28,9 +28,7 @@
 {
     [super viewDidLoad];
     _mocController = [ZOFMocController sharedInstance];
-    _filler = [[ZOFFillDb alloc] init];
-    _filler.mocController = _mocController;
-	// Do any additional setup after loading the view, typically from a nib.
+ 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
@@ -40,9 +38,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (![_filler operationExec]) {
-        [_filler fillDbOfEntity:@"Person" howManyInsert:10 withSleep:YES];
-    }
 }
 
 - (void)viewDidUnload

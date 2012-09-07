@@ -32,7 +32,7 @@
 
     if (self.detailItem) {
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"dd/mm/yyyy"];
+        [df setDateFormat:@"dd/MM/yyyy"];
         NSString *firstName = [self.detailItem valueForKey:@"firstname"];
         NSString *lastName = [self.detailItem valueForKey:@"lastname"];
         NSDate *birthDate = [self.detailItem valueForKey:@"birthdate"];

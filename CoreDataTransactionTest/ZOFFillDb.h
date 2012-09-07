@@ -12,10 +12,12 @@
 @interface ZOFFillDb : NSObject {
     @private
     BOOL _opExec;
+    NSDateFormatter *_df;
 }
 
 @property (strong, nonatomic) ZOFMocController *mocController;
 
++ (ZOFFillDb *)sharedZOFFillDb;
 
 - (BOOL)operationExec;
 - (void)fillDbOfEntity:(NSString *)entityName howManyInsert:(NSInteger)numberOfInsert withSleep:(BOOL)sleeping;

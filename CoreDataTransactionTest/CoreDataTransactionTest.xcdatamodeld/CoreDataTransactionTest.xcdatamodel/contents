@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Address" representedClassName="Address" syncable="YES">
+        <attribute name="a_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_addr_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_person" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Address_Type" representedClassName="Address_Type" syncable="YES">
+        <attribute name="a_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Event" representedClassName="Event">
+        <attribute name="a_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_person" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date">
             <userInfo/>
@@ -8,13 +21,16 @@
         <userInfo/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="a_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birthdate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Person" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Address" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="Address_Type" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Person" positionX="0" positionY="0" width="128" height="120"/>
     </elements>
 </model>

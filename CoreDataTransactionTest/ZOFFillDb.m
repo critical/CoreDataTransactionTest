@@ -7,10 +7,13 @@
 //
 
 #import "ZOFFillDb.h"
+#import "CWLSynthesizeSingleton.h"
 
 @implementation ZOFFillDb
 
+CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(ZOFFillDb);
 @synthesize mocController = _mocController;
+
 
 #pragma mark - Lifecycle
 
@@ -19,6 +22,8 @@
     self = [super init];
     if (self) {
         _opExec = NO;
+        _df = [[NSDateFormatter alloc] init];
+        [_df setDateFormat:@"dd/MM/yyyy HH:mm"];
     }
     return self;
 }
@@ -34,11 +39,14 @@
             sleep(5);
         }
         NSManagedObjectContext *context = [_mocController beginTransaction];
+        [self loadData:context];
+        /*
         NSArray *values = [self createArrayOfObj:entityName howManyInsert:numberOfInsert];
         for (NSDictionary *valueDict in values) {
             NSManagedObjectContext *obj = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:context];
             [obj setValuesForKeysWithDictionary:valueDict];
         }
+        */
         [_mocController endTransaction:context];
         _opExec = YES;
     });
@@ -50,6 +58,7 @@
         return _opExec;
     }
 }
+
 
 #pragma mark - Private Apis
 
@@ -66,6 +75,45 @@
         }
     }
     return objs;
+}
+
+- (void)loadData:(NSManagedObjectContext *)context
+{
+    NSArray *objects = [self importFromFile:@"addrTypes"];
+    NSLog(@"Imported address types: %@ \n Saving %@...", objects, @"Address_Type");
+    [self saveEntityName:@"Address_Type" dataDict:objects inContext:context];
+    
+    objects = [self importFromFile:@"persons"];
+    NSLog(@"Imported persons: %@ \n Saving %@...", objects, @"Person");
+    [self saveEntityName:@"Person" dataDict:objects inContext:context];
+    
+    objects = [self importFromFile:@"addresses"];
+    NSLog(@"Imported addresses: %@ \n Saving %@...", objects, @"Address");
+    [self saveEntityName:@"Address" dataDict:objects inContext:context];
+    
+    objects = [self importFromFile:@"events"];
+    NSLog(@"Imported addresses: %@ \n Saving %@...", objects, @"Event");
+    [self saveEntityName:@"Event" dataDict:objects inContext:context];
+}
+
+
+#pragma mark - Import file
+
+- (NSArray*) importFromFile:(NSString *)filename
+{
+    NSError *err = nil;
+    NSString* dataPath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
+    return [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath] options:NSJSONReadingMutableContainers error:&err];
+}
+
+#pragma mark - Salvataggio db
+
+- (void) saveEntityName:(NSString *)entityName dataDict:(NSArray *)data inContext:(NSManagedObjectContext *)context
+{
+    for (NSDictionary *dictionary in data) {
+        NSManagedObject *newObj = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:context];
+        [newObj setValuesForKeysWithJSONDictionary:dictionary dateFormatter:_df];
+	}
 }
 
 

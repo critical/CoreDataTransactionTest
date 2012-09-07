@@ -1,5 +1,5 @@
 //
-//  Person.h
+//  Address_Type.h
 //  CoreDataTransactionTest
 //
 //  Created by Fabio Gomiero on 07/09/12.
@@ -10,12 +10,9 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Person : NSManagedObject
+@interface Address_Type : NSManagedObject
 
-@property (nonatomic, retain) NSDate * birthdate;
-@property (nonatomic, retain) NSString * firstname;
-@property (nonatomic, retain) NSString * lastname;
-@property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * a_id;
+@property (nonatomic, retain) NSString * type;
 
 @end

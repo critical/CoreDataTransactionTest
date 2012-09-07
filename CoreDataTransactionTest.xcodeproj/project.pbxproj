@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5542543C15FA904100DC7E31 /* Address_Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542543B15FA904100DC7E31 /* Address_Type.m */; };
+		5542544015FA90F100DC7E31 /* ZOFBaseBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542543F15FA90F100DC7E31 /* ZOFBaseBean.m */; };
+		5542544315FA910800DC7E31 /* ZOFPersonBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542544215FA910800DC7E31 /* ZOFPersonBean.m */; };
+		5542544615FA917200DC7E31 /* ZOFAddressBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542544515FA917200DC7E31 /* ZOFAddressBean.m */; };
+		5542544915FA918500DC7E31 /* ZOFAddressTypeBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542544815FA918500DC7E31 /* ZOFAddressTypeBean.m */; };
+		5542544C15FA96D600DC7E31 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542544B15FA96D600DC7E31 /* Address.m */; };
+		5542544F15FA96D700DC7E31 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542544E15FA96D700DC7E31 /* Person.m */; };
+		5543900D15FA9FE5006247BD /* NSManagedObject+setValuesForKeysWithJSONDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543900C15FA9FE5006247BD /* NSManagedObject+setValuesForKeysWithJSONDictionary.m */; };
+		5543901015FAA0E8006247BD /* persons.json in Resources */ = {isa = PBXBuildFile; fileRef = 5543900F15FAA0E8006247BD /* persons.json */; };
+		5543901215FAA0FF006247BD /* addrTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5543901115FAA0FF006247BD /* addrTypes.json */; };
+		5543901415FAA320006247BD /* addresses.json in Resources */ = {isa = PBXBuildFile; fileRef = 5543901315FAA320006247BD /* addresses.json */; };
+		5543901615FAA79D006247BD /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 5543901515FAA79D006247BD /* events.json */; };
+		5543901915FAB0E6006247BD /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543901815FAB0E6006247BD /* Event.m */; };
+		5543901B15FAB5C5006247BD /* filled.zof in Resources */ = {isa = PBXBuildFile; fileRef = 5543901A15FAB5C5006247BD /* filled.zof */; };
 		554F735915EBCAF8008D732A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735815EBCAF8008D732A /* UIKit.framework */; };
 		554F735B15EBCAF8008D732A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735A15EBCAF8008D732A /* Foundation.framework */; };
 		554F735D15EBCAF8008D732A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735C15EBCAF8008D732A /* CoreGraphics.framework */; };
@@ -19,12 +33,33 @@
 		554F737415EBCAF8008D732A /* ZOFMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F737315EBCAF8008D732A /* ZOFMasterViewController.m */; };
 		554F737715EBCAF8008D732A /* ZOFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F737615EBCAF8008D732A /* ZOFDetailViewController.m */; };
 		554F738815EBD970008D732A /* ZOFMocController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F738715EBD970008D732A /* ZOFMocController.m */; };
-		554F738D15EBE19E008D732A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F738C15EBE19E008D732A /* Person.m */; };
-		554F739015EBE19F008D732A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F738F15EBE19F008D732A /* Event.m */; };
 		5566BC9815EBE9790033A1CB /* ZOFFillDb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5566BC9715EBE9790033A1CB /* ZOFFillDb.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5542543A15FA904100DC7E31 /* Address_Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address_Type.h; sourceTree = "<group>"; };
+		5542543B15FA904100DC7E31 /* Address_Type.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address_Type.m; sourceTree = "<group>"; };
+		5542543E15FA90F100DC7E31 /* ZOFBaseBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFBaseBean.h; sourceTree = "<group>"; };
+		5542543F15FA90F100DC7E31 /* ZOFBaseBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFBaseBean.m; sourceTree = "<group>"; };
+		5542544115FA910800DC7E31 /* ZOFPersonBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFPersonBean.h; sourceTree = "<group>"; };
+		5542544215FA910800DC7E31 /* ZOFPersonBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFPersonBean.m; sourceTree = "<group>"; };
+		5542544415FA917200DC7E31 /* ZOFAddressBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFAddressBean.h; sourceTree = "<group>"; };
+		5542544515FA917200DC7E31 /* ZOFAddressBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFAddressBean.m; sourceTree = "<group>"; };
+		5542544715FA918500DC7E31 /* ZOFAddressTypeBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFAddressTypeBean.h; sourceTree = "<group>"; };
+		5542544815FA918500DC7E31 /* ZOFAddressTypeBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFAddressTypeBean.m; sourceTree = "<group>"; };
+		5542544A15FA96D600DC7E31 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		5542544B15FA96D600DC7E31 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		5542544D15FA96D700DC7E31 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		5542544E15FA96D700DC7E31 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		5543900B15FA9FE5006247BD /* NSManagedObject+setValuesForKeysWithJSONDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+setValuesForKeysWithJSONDictionary.h"; sourceTree = "<group>"; };
+		5543900C15FA9FE5006247BD /* NSManagedObject+setValuesForKeysWithJSONDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+setValuesForKeysWithJSONDictionary.m"; sourceTree = "<group>"; };
+		5543900F15FAA0E8006247BD /* persons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = persons.json; sourceTree = "<group>"; };
+		5543901115FAA0FF006247BD /* addrTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = addrTypes.json; sourceTree = "<group>"; };
+		5543901315FAA320006247BD /* addresses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = addresses.json; sourceTree = "<group>"; };
+		5543901515FAA79D006247BD /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		5543901715FAB0E6006247BD /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		5543901815FAB0E6006247BD /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		5543901A15FAB5C5006247BD /* filled.zof */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = filled.zof; sourceTree = "<group>"; };
 		554F735415EBCAF8008D732A /* CoreDataTransactionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTransactionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		554F735815EBCAF8008D732A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		554F735A15EBCAF8008D732A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,12 +79,9 @@
 		554F737615EBCAF8008D732A /* ZOFDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZOFDetailViewController.m; sourceTree = "<group>"; };
 		554F738615EBD970008D732A /* ZOFMocController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFMocController.h; sourceTree = "<group>"; };
 		554F738715EBD970008D732A /* ZOFMocController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFMocController.m; sourceTree = "<group>"; };
-		554F738B15EBE19E008D732A /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		554F738C15EBE19E008D732A /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		554F738E15EBE19F008D732A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		554F738F15EBE19F008D732A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		5566BC9615EBE9790033A1CB /* ZOFFillDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFFillDb.h; sourceTree = "<group>"; };
 		5566BC9715EBE9790033A1CB /* ZOFFillDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFFillDb.m; sourceTree = "<group>"; };
+		55B1C0C915EEB1F7001182EC /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +99,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5542543D15FA90AF00DC7E31 /* Beans */ = {
+			isa = PBXGroup;
+			children = (
+				5542543E15FA90F100DC7E31 /* ZOFBaseBean.h */,
+				5542543F15FA90F100DC7E31 /* ZOFBaseBean.m */,
+				5542544115FA910800DC7E31 /* ZOFPersonBean.h */,
+				5542544215FA910800DC7E31 /* ZOFPersonBean.m */,
+				5542544415FA917200DC7E31 /* ZOFAddressBean.h */,
+				5542544515FA917200DC7E31 /* ZOFAddressBean.m */,
+				5542544715FA918500DC7E31 /* ZOFAddressTypeBean.h */,
+				5542544815FA918500DC7E31 /* ZOFAddressTypeBean.m */,
+			);
+			path = Beans;
+			sourceTree = "<group>";
+		};
+		5543900915FA9FA1006247BD /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5543900B15FA9FE5006247BD /* NSManagedObject+setValuesForKeysWithJSONDictionary.h */,
+				5543900C15FA9FE5006247BD /* NSManagedObject+setValuesForKeysWithJSONDictionary.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		5543900E15FAA0C4006247BD /* JSonData */ = {
+			isa = PBXGroup;
+			children = (
+				5543901315FAA320006247BD /* addresses.json */,
+				5543901115FAA0FF006247BD /* addrTypes.json */,
+				5543901515FAA79D006247BD /* events.json */,
+				5543900F15FAA0E8006247BD /* persons.json */,
+			);
+			path = JSonData;
+			sourceTree = "<group>";
+		};
 		554F734915EBCAF8008D732A = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +165,7 @@
 		554F736015EBCAF8008D732A /* CoreDataTransactionTest */ = {
 			isa = PBXGroup;
 			children = (
+				55B1C0C915EEB1F7001182EC /* CWLSynthesizeSingleton.h */,
 				554F736915EBCAF8008D732A /* ZOFAppDelegate.h */,
 				554F736A15EBCAF8008D732A /* ZOFAppDelegate.m */,
 				554F738615EBD970008D732A /* ZOFMocController.h */,
@@ -109,8 +177,10 @@
 				554F737315EBCAF8008D732A /* ZOFMasterViewController.m */,
 				554F737515EBCAF8008D732A /* ZOFDetailViewController.h */,
 				554F737615EBCAF8008D732A /* ZOFDetailViewController.m */,
-				554F736F15EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld */,
+				5542543D15FA90AF00DC7E31 /* Beans */,
 				554F738A15EBE195008D732A /* Model */,
+				5543900915FA9FA1006247BD /* Categories */,
+				5543900E15FAA0C4006247BD /* JSonData */,
 				554F736115EBCAF8008D732A /* Supporting Files */,
 			);
 			path = CoreDataTransactionTest;
@@ -119,10 +189,12 @@
 		554F736115EBCAF8008D732A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				554F736F15EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld */,
 				554F736215EBCAF8008D732A /* CoreDataTransactionTest-Info.plist */,
 				554F736315EBCAF8008D732A /* InfoPlist.strings */,
 				554F736615EBCAF8008D732A /* main.m */,
 				554F736815EBCAF8008D732A /* CoreDataTransactionTest-Prefix.pch */,
+				5543901A15FAB5C5006247BD /* filled.zof */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -130,10 +202,14 @@
 		554F738A15EBE195008D732A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				554F738E15EBE19F008D732A /* Event.h */,
-				554F738F15EBE19F008D732A /* Event.m */,
-				554F738B15EBE19E008D732A /* Person.h */,
-				554F738C15EBE19E008D732A /* Person.m */,
+				5542544A15FA96D600DC7E31 /* Address.h */,
+				5542544B15FA96D600DC7E31 /* Address.m */,
+				5542543A15FA904100DC7E31 /* Address_Type.h */,
+				5542543B15FA904100DC7E31 /* Address_Type.m */,
+				5542544D15FA96D700DC7E31 /* Person.h */,
+				5542544E15FA96D700DC7E31 /* Person.m */,
+				5543901715FAB0E6006247BD /* Event.h */,
+				5543901815FAB0E6006247BD /* Event.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +268,11 @@
 			files = (
 				554F736515EBCAF8008D732A /* InfoPlist.strings in Resources */,
 				554F736E15EBCAF8008D732A /* MainStoryboard.storyboard in Resources */,
+				5543901015FAA0E8006247BD /* persons.json in Resources */,
+				5543901215FAA0FF006247BD /* addrTypes.json in Resources */,
+				5543901415FAA320006247BD /* addresses.json in Resources */,
+				5543901615FAA79D006247BD /* events.json in Resources */,
+				5543901B15FAB5C5006247BD /* filled.zof in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,9 +289,16 @@
 				554F737415EBCAF8008D732A /* ZOFMasterViewController.m in Sources */,
 				554F737715EBCAF8008D732A /* ZOFDetailViewController.m in Sources */,
 				554F738815EBD970008D732A /* ZOFMocController.m in Sources */,
-				554F738D15EBE19E008D732A /* Person.m in Sources */,
-				554F739015EBE19F008D732A /* Event.m in Sources */,
 				5566BC9815EBE9790033A1CB /* ZOFFillDb.m in Sources */,
+				5542543C15FA904100DC7E31 /* Address_Type.m in Sources */,
+				5542544015FA90F100DC7E31 /* ZOFBaseBean.m in Sources */,
+				5542544315FA910800DC7E31 /* ZOFPersonBean.m in Sources */,
+				5542544615FA917200DC7E31 /* ZOFAddressBean.m in Sources */,
+				5542544915FA918500DC7E31 /* ZOFAddressTypeBean.m in Sources */,
+				5542544C15FA96D600DC7E31 /* Address.m in Sources */,
+				5542544F15FA96D700DC7E31 /* Person.m in Sources */,
+				5543900D15FA9FE5006247BD /* NSManagedObject+setValuesForKeysWithJSONDictionary.m in Sources */,
+				5543901915FAB0E6006247BD /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

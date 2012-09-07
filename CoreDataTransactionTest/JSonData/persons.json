@@ -1,0 +1,9 @@
+[
+ { "a_id" : "1", "birthdate" : "22/12/1980 00:00", "firstname" : "Andrea", "lastname" : "Kent", "title" : "Sig."},
+ { "a_id" : "2", "birthdate" : "3/05/1978 00:00", "firstname" : "Paola", "lastname" : "Molinari", "title" : "Sig.ra"},
+ { "a_id" : "3", "birthdate" : "18/03/1986 00:00", "firstname" : "Alessandro", "lastname" : "Lussi", "title" : "Ing."},
+ { "a_id" : "4", "birthdate" : "27/09/1974 00:00", "firstname" : "Luca", "lastname" : "Marini", "title" : "Sig."},
+ { "a_id" : "5", "birthdate" : "8/05/1993 00:00", "firstname" : "Emily", "lastname" : "Rose", "title" : "Miss"},
+ { "a_id" : "6", "birthdate" : "10/07/1982 00:00", "firstname" : "Enrica", "lastname" : "Lughi", "title" : "Dott.ssa"},
+ { "a_id" : "7", "birthdate" : "16/11/1986 00:00", "firstname" : "Elena", "lastname" : "Poma", "title" : "Dott.ssa"}
+]

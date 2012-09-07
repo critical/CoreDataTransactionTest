@@ -1,0 +1,12 @@
+[
+ { "a_id" : "1", "country" : "Francia", "id_addr_type" : "1", "id_person" : "1", "street" : "rue Paris 9"},
+ { "a_id" : "2", "country" : "Italia", "id_addr_type" : "2", "id_person" : "1", "street" : "piazza Cristoforo Colombo 89"},
+ { "a_id" : "3", "country" : "Svizzera", "id_addr_type" : "1", "id_person" : "2", "street" : "via P.F. Calvi 43"},
+ { "a_id" : "4", "country" : "Germania", "id_addr_type" : "1", "id_person" : "3", "street" : "Berlino"},
+ { "a_id" : "5", "country" : "Francia", "id_addr_type" : "1", "id_person" : "4", "street" : "boulevard Saint Germain 75"},
+ { "a_id" : "6", "country" : "Francia", "id_addr_type" : "2", "id_person" : "4", "street" : "rue Nice"},
+ { "a_id" : "7", "country" : "California", "id_addr_type" : "1", "id_person" : "5", "street" : "Rodeo Drive 20"},
+ { "a_id" : "8", "country" : "Italia", "id_addr_type" : "2", "id_person" : "5", "street" : "via Roma 2, Potenza"},
+ { "a_id" : "9", "country" : "Italia", "id_addr_type" : "1", "id_person" : "6", "street" : "piazza XX Settembre 5"},
+ { "a_id" : "10", "country" : "Italia", "id_addr_type" : "1", "id_person" : "7", "street" : "via Ludovico il Moro 15"}
+]

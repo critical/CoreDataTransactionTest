@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZOFMocController : NSObject
+@interface ZOFMocController : NSObject {
+    @private
+    BOOL _createDB;
+}
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

@@ -2,7 +2,7 @@
 //  Event.h
 //  CoreDataTransactionTest
 //
-//  Created by Fabio Gomiero on 27/08/12.
+//  Created by Fabio Gomiero on 08/09/12.
 //  Copyright (c) 2012 01Factory. All rights reserved.
 //
 
@@ -12,7 +12,9 @@
 
 @interface Event : NSManagedObject
 
-@property (nonatomic, retain) NSDate * timeStamp;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSDate * timeStamp;
+@property (nonatomic, retain) NSString * id_person;
+@property (nonatomic, retain) NSString * a_id;
 
 @end
