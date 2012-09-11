@@ -10,9 +10,11 @@
 
 #import "ZOFDetailViewController.h"
 #import "ZOFPersonBean.h"
+#import "ZOFAddressBean.h"
+#import "ZOFAddressTypeBean.h"
 
 @interface ZOFMasterViewController () {
-    //ZOFFillDb *_filler;
+    NSArray *persons;
 }
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -27,7 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _mocController = [ZOFMocController sharedInstance];
+    _serviceDb = [ZOFServiceDb sharedInstance];
+    
  	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -38,6 +41,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    persons = [_serviceDb fetchBeanName:@"ZOFPersonBean" withPredicate:[NSPredicate predicateWithFormat:@"%K == %@", @"lastEvent", @"Videochat su Facebook"]];
+    
+    //persons = [_serviceDb fetchBeanName:@"ZOFAddressBean" predicateWithSubstitutionVariables:[NSDictionary dictionaryWithObject:@"2" forKey:@"addrType"]];
+    //persons = [_serviceDb fetchBeanName:@"ZOFAddressTypeBean" withPredicate:nil];
 }
 
 - (void)viewDidUnload
@@ -53,42 +60,37 @@
 
 - (void)insertNewObject:(id)sender
 {
-    //NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    //NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObjectContext *context = [_mocController beginTransaction];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:context];
+    ZOFAddressTypeBean *type = [_serviceDb fetchBeanName:@"ZOFAddressTypeBean" withPredicate:[NSPredicate predicateWithFormat:@"%K == %@", @"type", @"Residenza"]];
     
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSString stringWithFormat:@"first%d", rand()%10] forKey:@"firstname"];
-    [newManagedObject setValue:[NSString stringWithFormat:@"last%d", rand()%10] forKey:@"lastname"];
-    [newManagedObject setValue:[NSString stringWithFormat:@"t%d", rand()%10] forKey:@"title"];
-    [newManagedObject setValue:[[NSDate date] dateByAddingTimeInterval:(rand()%5)] forKey:@"birthdate"];
     
-    // Save the context.
-    [_mocController endTransaction:context];
-    /*
-    NSError *error = nil;
-    if (![context save:&error]) {
-         // Replace this implementation with code to handle the error appropriately.
-         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    */
+    ZOFAddressBean *addr = [[ZOFAddressBean alloc] init];
+    addr.artifId = ZOFGetUUID();
+    addr.street = [NSString stringWithFormat:@"street%d", rand()%10];
+    addr.zip = [NSString stringWithFormat:@"zip%d", rand()%10];
+    addr.country = @"Italia";
+    addr.addrType = type;
+
+    ZOFPersonBean *p = [[ZOFPersonBean alloc] init];
+    p.artifId = ZOFGetUUID();
+    p.name = [NSString stringWithFormat:@"first%d", rand()%10];
+    p.lastName = [NSString stringWithFormat:@"last%d", rand()%10];
+    p.birthdate = [NSDate date];
+    p.addresses = @[ addr ];
+    
+    NSError *err;
+    [_serviceDb saveBean:p error:err];
 }
 
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    return [persons count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -107,16 +109,8 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
         NSError *error = nil;
-        if (![context save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
+        [_serviceDb deleteBean:[persons objectAtIndex:indexPath.row] error:error];
     }   
 }
 
@@ -130,49 +124,13 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        ZOFPersonBean *object = [persons objectAtIndex:indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
 
-#pragma mark - Fetched results controller
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:_mocController.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Set the batch size to a suitable number.
-    [fetchRequest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastname" ascending:YES];
-    NSArray *sortDescriptors = @[sortDescriptor];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:_mocController.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-	     // Replace this implementation with code to handle the error appropriately.
-	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
-    
-    return _fetchedResultsController;
-}    
+#pragma mark - Override
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
@@ -236,9 +194,24 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"title"] description];
-    cell.detailTextLabel.text = [[object valueForKey:@"lastname"] description];
+    ZOFPersonBean *p = [persons objectAtIndex:indexPath.row];
+    cell.textLabel.text = p.lastName;
+    cell.detailTextLabel.text = p.name;
+    /*
+    ZOFAddressBean *p = [persons objectAtIndex:indexPath.row];
+    cell.textLabel.text = p.artifId;
+    cell.detailTextLabel.text = p.addrType.type;
+    */
+}
+
+NSString *ZOFGetUUID()
+{
+    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+    CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
+    CFRelease(uuidRef);
+    NSString *uuid = [NSString stringWithString:(__bridge NSString *)uuidStringRef];
+    CFRelease(uuidStringRef);
+    return uuid;
 }
 
 @end

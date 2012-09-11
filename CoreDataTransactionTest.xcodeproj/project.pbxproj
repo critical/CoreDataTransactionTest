@@ -20,7 +20,6 @@
 		5543901415FAA320006247BD /* addresses.json in Resources */ = {isa = PBXBuildFile; fileRef = 5543901315FAA320006247BD /* addresses.json */; };
 		5543901615FAA79D006247BD /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 5543901515FAA79D006247BD /* events.json */; };
 		5543901915FAB0E6006247BD /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543901815FAB0E6006247BD /* Event.m */; };
-		5543901B15FAB5C5006247BD /* filled.zof in Resources */ = {isa = PBXBuildFile; fileRef = 5543901A15FAB5C5006247BD /* filled.zof */; };
 		554F735915EBCAF8008D732A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735815EBCAF8008D732A /* UIKit.framework */; };
 		554F735B15EBCAF8008D732A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735A15EBCAF8008D732A /* Foundation.framework */; };
 		554F735D15EBCAF8008D732A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F735C15EBCAF8008D732A /* CoreGraphics.framework */; };
@@ -34,6 +33,11 @@
 		554F737715EBCAF8008D732A /* ZOFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F737615EBCAF8008D732A /* ZOFDetailViewController.m */; };
 		554F738815EBD970008D732A /* ZOFMocController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F738715EBD970008D732A /* ZOFMocController.m */; };
 		5566BC9815EBE9790033A1CB /* ZOFFillDb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5566BC9715EBE9790033A1CB /* ZOFFillDb.m */; };
+		557615AB15FD0F140092251A /* ZOFServiceDb.m in Sources */ = {isa = PBXBuildFile; fileRef = 557615AA15FD0F140092251A /* ZOFServiceDb.m */; };
+		559423A115FDE8C100697B9B /* ZOFMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 559423A015FDE8C000697B9B /* ZOFMapper.m */; };
+		559423A315FDED0E00697B9B /* beans.xml in Resources */ = {isa = PBXBuildFile; fileRef = 559423A215FDED0E00697B9B /* beans.xml */; };
+		559423A615FE0A1500697B9B /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 559423A415FE0A1500697B9B /* XPathQuery.m */; };
+		559423A815FE0B8400697B9B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 559423A715FE0B8400697B9B /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +63,6 @@
 		5543901515FAA79D006247BD /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
 		5543901715FAB0E6006247BD /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		5543901815FAB0E6006247BD /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		5543901A15FAB5C5006247BD /* filled.zof */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = filled.zof; sourceTree = "<group>"; };
 		554F735415EBCAF8008D732A /* CoreDataTransactionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTransactionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		554F735815EBCAF8008D732A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		554F735A15EBCAF8008D732A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,6 +84,14 @@
 		554F738715EBD970008D732A /* ZOFMocController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFMocController.m; sourceTree = "<group>"; };
 		5566BC9615EBE9790033A1CB /* ZOFFillDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFFillDb.h; sourceTree = "<group>"; };
 		5566BC9715EBE9790033A1CB /* ZOFFillDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFFillDb.m; sourceTree = "<group>"; };
+		557615A915FD0F140092251A /* ZOFServiceDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFServiceDb.h; sourceTree = "<group>"; };
+		557615AA15FD0F140092251A /* ZOFServiceDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFServiceDb.m; sourceTree = "<group>"; };
+		5594239F15FDE8C000697B9B /* ZOFMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFMapper.h; sourceTree = "<group>"; };
+		559423A015FDE8C000697B9B /* ZOFMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFMapper.m; sourceTree = "<group>"; };
+		559423A215FDED0E00697B9B /* beans.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = beans.xml; sourceTree = "<group>"; };
+		559423A415FE0A1500697B9B /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		559423A515FE0A1500697B9B /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		559423A715FE0B8400697B9B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		55B1C0C915EEB1F7001182EC /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559423A815FE0B8400697B9B /* libxml2.dylib in Frameworks */,
 				554F735915EBCAF8008D732A /* UIKit.framework in Frameworks */,
 				554F735B15EBCAF8008D732A /* Foundation.framework in Frameworks */,
 				554F735D15EBCAF8008D732A /* CoreGraphics.framework in Frameworks */,
@@ -154,6 +166,7 @@
 		554F735715EBCAF8008D732A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				559423A715FE0B8400697B9B /* libxml2.dylib */,
 				554F735815EBCAF8008D732A /* UIKit.framework */,
 				554F735A15EBCAF8008D732A /* Foundation.framework */,
 				554F735C15EBCAF8008D732A /* CoreGraphics.framework */,
@@ -170,13 +183,8 @@
 				554F736A15EBCAF8008D732A /* ZOFAppDelegate.m */,
 				554F738615EBD970008D732A /* ZOFMocController.h */,
 				554F738715EBD970008D732A /* ZOFMocController.m */,
-				5566BC9615EBE9790033A1CB /* ZOFFillDb.h */,
-				5566BC9715EBE9790033A1CB /* ZOFFillDb.m */,
-				554F736C15EBCAF8008D732A /* MainStoryboard.storyboard */,
-				554F737215EBCAF8008D732A /* ZOFMasterViewController.h */,
-				554F737315EBCAF8008D732A /* ZOFMasterViewController.m */,
-				554F737515EBCAF8008D732A /* ZOFDetailViewController.h */,
-				554F737615EBCAF8008D732A /* ZOFDetailViewController.m */,
+				5594239E15FDE88400697B9B /* Business */,
+				5594239C15FDE86100697B9B /* ViewControllers */,
 				5542543D15FA90AF00DC7E31 /* Beans */,
 				554F738A15EBE195008D732A /* Model */,
 				5543900915FA9FA1006247BD /* Categories */,
@@ -189,12 +197,13 @@
 		554F736115EBCAF8008D732A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				554F736C15EBCAF8008D732A /* MainStoryboard.storyboard */,
 				554F736F15EBCAF8008D732A /* CoreDataTransactionTest.xcdatamodeld */,
 				554F736215EBCAF8008D732A /* CoreDataTransactionTest-Info.plist */,
 				554F736315EBCAF8008D732A /* InfoPlist.strings */,
 				554F736615EBCAF8008D732A /* main.m */,
 				554F736815EBCAF8008D732A /* CoreDataTransactionTest-Prefix.pch */,
-				5543901A15FAB5C5006247BD /* filled.zof */,
+				559423A215FDED0E00697B9B /* beans.xml */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -212,6 +221,32 @@
 				5543901815FAB0E6006247BD /* Event.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5594239C15FDE86100697B9B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				554F737215EBCAF8008D732A /* ZOFMasterViewController.h */,
+				554F737315EBCAF8008D732A /* ZOFMasterViewController.m */,
+				554F737515EBCAF8008D732A /* ZOFDetailViewController.h */,
+				554F737615EBCAF8008D732A /* ZOFDetailViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5594239E15FDE88400697B9B /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				559423A415FE0A1500697B9B /* XPathQuery.m */,
+				559423A515FE0A1500697B9B /* XPathQuery.h */,
+				5566BC9615EBE9790033A1CB /* ZOFFillDb.h */,
+				5566BC9715EBE9790033A1CB /* ZOFFillDb.m */,
+				557615A915FD0F140092251A /* ZOFServiceDb.h */,
+				557615AA15FD0F140092251A /* ZOFServiceDb.m */,
+				5594239F15FDE8C000697B9B /* ZOFMapper.h */,
+				559423A015FDE8C000697B9B /* ZOFMapper.m */,
+			);
+			name = Business;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +307,7 @@
 				5543901215FAA0FF006247BD /* addrTypes.json in Resources */,
 				5543901415FAA320006247BD /* addresses.json in Resources */,
 				5543901615FAA79D006247BD /* events.json in Resources */,
-				5543901B15FAB5C5006247BD /* filled.zof in Resources */,
+				559423A315FDED0E00697B9B /* beans.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +334,9 @@
 				5542544F15FA96D700DC7E31 /* Person.m in Sources */,
 				5543900D15FA9FE5006247BD /* NSManagedObject+setValuesForKeysWithJSONDictionary.m in Sources */,
 				5543901915FAB0E6006247BD /* Event.m in Sources */,
+				557615AB15FD0F140092251A /* ZOFServiceDb.m in Sources */,
+				559423A115FDE8C100697B9B /* ZOFMapper.m in Sources */,
+				559423A615FE0A1500697B9B /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +416,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreDataTransactionTest/CoreDataTransactionTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "CoreDataTransactionTest/CoreDataTransactionTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -389,6 +428,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreDataTransactionTest/CoreDataTransactionTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "CoreDataTransactionTest/CoreDataTransactionTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

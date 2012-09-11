@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+    <bean name="ZOFBaseBean">
+        <property name="artifId"    entityField="a_id" />
+    </bean>
+
+    <bean name="ZOFAddressTypeBean" mappedByEntity="Address_Type">
+        <property name="type"       entityField="type" />
+    </bean>
+
+    <!-- la property zip manca: non e' mappata -->
+    <bean name="ZOFAddressBean" mappedByEntity="Address">
+        <property name="street"     entityField="street" />
+        <property name="country"    entityField="country" />
+        <property name="addrType"   beanName="ZOFAddressTypeBean" entityField="id_addr_type" />
+    </bean>
+
+    <!-- la property title manca: non e' mappata -->
+    <bean name="ZOFPersonBean" mappedByEntity="Person">
+        <property name="name"       entityField="firstname" />
+        <property name="lastName"   entityField="lastname" />
+        <property name="birthdate"  entityField="birthdate" />
+        <property name="lastEvent"  entityField="name" entity="Event" entityFieldFk="id_person" />
+        <property name="addresses"  beanName="ZOFAddressBean" entityFieldFk="id_person" />
+    </bean>
+</beans>

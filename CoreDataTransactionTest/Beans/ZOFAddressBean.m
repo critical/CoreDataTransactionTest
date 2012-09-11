@@ -13,4 +13,9 @@
 
 @synthesize street, zip, country, addrType;
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@:\n%@ (%@)",addrType.type, street, country];
+}
+
 @end

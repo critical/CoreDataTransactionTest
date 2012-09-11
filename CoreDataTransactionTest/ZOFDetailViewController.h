@@ -11,6 +11,7 @@
 @interface ZOFDetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
-
+@property (weak, nonatomic) IBOutlet UILabel *detailPersonLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end
