@@ -47,10 +47,14 @@
 
 #pragma mark - Public Apis
 
-- (NSArray *)fetchBeanName:(NSString *)beanName withPredicate:(NSPredicate *)predicate
+- (NSArray *)fetchBeanName:(NSString *)beanName inContext:(NSManagedObjectContext *)ctx withPredicate:(NSPredicate *)predicate
 {
+    NSManagedObjectContext *tempCtx = ctx;
+    if (tempCtx == nil) {
+        tempCtx = _moc.managedObjectContext;
+    }
     NSEntityDescription *entity = [NSEntityDescription entityForName:[_mapper entityNameFromBeanName:beanName]
-                                              inManagedObjectContext:_moc.managedObjectContext];
+                                              inManagedObjectContext:tempCtx];
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     [request setEntity:entity];
     
@@ -65,16 +69,16 @@
     */
     
     NSError *error = nil;
-    NSArray *results = [_moc.managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *results = [tempCtx executeFetchRequest:request error:&error];
     
     if (error != nil) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
     
     if (predicate) {
-        return [[_mapper mapEntities:results intoBeanName:beanName] filteredArrayUsingPredicate:predicate];
+        return [[_mapper mapEntities:results intoBeanName:beanName withContext:tempCtx] filteredArrayUsingPredicate:predicate];
     } else {
-        return [_mapper mapEntities:results intoBeanName:beanName];
+        return [_mapper mapEntities:results intoBeanName:beanName withContext:tempCtx];
     }
 }
 

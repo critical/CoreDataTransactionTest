@@ -28,6 +28,6 @@
 // il primo parametro passato a nil conterrà al ritorno del metodo il nome dell'entity.
 //
 - (NSString *)propertyOfEntity:(NSString **)entityName fromProperty:(NSString *)beanProp ofBean:(NSString *)beanName;
-- (id)mapEntities:(NSArray *)arrayOfEntity intoBeanName:(NSString *)beanName;
+- (id)mapEntities:(NSArray *)arrayOfEntity intoBeanName:(NSString *)beanName withContext:(NSManagedObjectContext *)ctx;
 
 @end

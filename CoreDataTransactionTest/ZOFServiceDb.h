@@ -18,7 +18,7 @@
 
 + (id)sharedInstance;
 
-- (id)fetchBeanName:(NSString *)beanName withPredicate:(NSPredicate *)predicate;
+- (id)fetchBeanName:(NSString *)beanName inContext:(NSManagedObjectContext *)ctx withPredicate:(NSPredicate *)predicate;
 - (BOOL)saveBean:(ZOFBaseBean *)bean error:(NSError *)error;
 - (BOOL)deleteBean:(ZOFBaseBean *)bean error:(NSError *)error;
 - (BOOL)updateBean:(ZOFBaseBean *)bean error:(NSError *)error;

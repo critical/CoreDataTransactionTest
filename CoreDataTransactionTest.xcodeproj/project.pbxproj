@@ -38,6 +38,11 @@
 		559423A315FDED0E00697B9B /* beans.xml in Resources */ = {isa = PBXBuildFile; fileRef = 559423A215FDED0E00697B9B /* beans.xml */; };
 		559423A615FE0A1500697B9B /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 559423A415FE0A1500697B9B /* XPathQuery.m */; };
 		559423A815FE0B8400697B9B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 559423A715FE0B8400697B9B /* libxml2.dylib */; };
+		55C32E4816329E5300FBD431 /* ZOFCycleSelectOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C32E4716329E5200FBD431 /* ZOFCycleSelectOperation.m */; };
+		55C32E4C16329EBB00FBD431 /* ZOFEmulateDownloadOp.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C32E4B16329EBB00FBD431 /* ZOFEmulateDownloadOp.m */; };
+		55C32E601632A79700FBD431 /* ZOFProcessQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C32E5F1632A79600FBD431 /* ZOFProcessQueue.m */; };
+		55C32E631632BE9100FBD431 /* ZOFTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C32E621632BE9100FBD431 /* ZOFTestViewController.m */; };
+		55CD32141632E8A700D63ECA /* ZOFDownloadQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CD32131632E8A700D63ECA /* ZOFDownloadQueue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +98,16 @@
 		559423A515FE0A1500697B9B /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		559423A715FE0B8400697B9B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		55B1C0C915EEB1F7001182EC /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
+		55C32E4616329E5200FBD431 /* ZOFCycleSelectOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFCycleSelectOperation.h; sourceTree = "<group>"; };
+		55C32E4716329E5200FBD431 /* ZOFCycleSelectOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFCycleSelectOperation.m; sourceTree = "<group>"; };
+		55C32E4A16329EBB00FBD431 /* ZOFEmulateDownloadOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFEmulateDownloadOp.h; sourceTree = "<group>"; };
+		55C32E4B16329EBB00FBD431 /* ZOFEmulateDownloadOp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFEmulateDownloadOp.m; sourceTree = "<group>"; };
+		55C32E5E1632A79600FBD431 /* ZOFProcessQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFProcessQueue.h; sourceTree = "<group>"; };
+		55C32E5F1632A79600FBD431 /* ZOFProcessQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFProcessQueue.m; sourceTree = "<group>"; };
+		55C32E611632BE9100FBD431 /* ZOFTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFTestViewController.h; sourceTree = "<group>"; };
+		55C32E621632BE9100FBD431 /* ZOFTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFTestViewController.m; sourceTree = "<group>"; };
+		55CD32121632E8A700D63ECA /* ZOFDownloadQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOFDownloadQueue.h; sourceTree = "<group>"; };
+		55CD32131632E8A700D63ECA /* ZOFDownloadQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZOFDownloadQueue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +245,8 @@
 				554F737315EBCAF8008D732A /* ZOFMasterViewController.m */,
 				554F737515EBCAF8008D732A /* ZOFDetailViewController.h */,
 				554F737615EBCAF8008D732A /* ZOFDetailViewController.m */,
+				55C32E611632BE9100FBD431 /* ZOFTestViewController.h */,
+				55C32E621632BE9100FBD431 /* ZOFTestViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -245,6 +262,14 @@
 				557615AA15FD0F140092251A /* ZOFServiceDb.m */,
 				5594239F15FDE8C000697B9B /* ZOFMapper.h */,
 				559423A015FDE8C000697B9B /* ZOFMapper.m */,
+				55C32E4616329E5200FBD431 /* ZOFCycleSelectOperation.h */,
+				55C32E4716329E5200FBD431 /* ZOFCycleSelectOperation.m */,
+				55C32E4A16329EBB00FBD431 /* ZOFEmulateDownloadOp.h */,
+				55C32E4B16329EBB00FBD431 /* ZOFEmulateDownloadOp.m */,
+				55C32E5E1632A79600FBD431 /* ZOFProcessQueue.h */,
+				55C32E5F1632A79600FBD431 /* ZOFProcessQueue.m */,
+				55CD32121632E8A700D63ECA /* ZOFDownloadQueue.h */,
+				55CD32131632E8A700D63ECA /* ZOFDownloadQueue.m */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -337,6 +362,11 @@
 				557615AB15FD0F140092251A /* ZOFServiceDb.m in Sources */,
 				559423A115FDE8C100697B9B /* ZOFMapper.m in Sources */,
 				559423A615FE0A1500697B9B /* XPathQuery.m in Sources */,
+				55C32E4816329E5300FBD431 /* ZOFCycleSelectOperation.m in Sources */,
+				55C32E4C16329EBB00FBD431 /* ZOFEmulateDownloadOp.m in Sources */,
+				55C32E601632A79700FBD431 /* ZOFProcessQueue.m in Sources */,
+				55C32E631632BE9100FBD431 /* ZOFTestViewController.m in Sources */,
+				55CD32141632E8A700D63ECA /* ZOFDownloadQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

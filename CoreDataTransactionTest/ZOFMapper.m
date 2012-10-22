@@ -13,8 +13,6 @@
 #import "ZOFAddressBean.h"
 #import "ZOFAddressTypeBean.h"
 
-#import "ZOFMocController.h"
-
 @implementation ZOFMapper
 
 
@@ -103,7 +101,7 @@
 }
 
 
-- (id)mapEntities:(NSArray *)arrayOfEntity intoBeanName:(NSString *)beanName
+- (id)mapEntities:(NSArray *)arrayOfEntity intoBeanName:(NSString *)beanName withContext:(NSManagedObjectContext *)ctx
 {
     NSArray *beanProperties = [[_beanNode objectForKey:beanName] objectForKey:@"properties"];
     
@@ -119,7 +117,7 @@
             if ([attribute objectForKey:@"entity"]) {
                 NSString *newEntity = [attribute objectForKey:@"entity"];
                 NSPredicate *pred = [NSPredicate predicateWithFormat:@"%K == %@", [attribute objectForKey:@"entityFieldFk"], [manObj valueForKey:@"a_id"]];
-                beanValue = [self execSubQueryInEntity:newEntity withPredicate:pred propertyToExtract:[attribute objectForKey:@"entityField"]];
+                beanValue = [self execSubQueryOfEntity:newEntity inContext:ctx withPredicate:pred propertyToExtract:[attribute objectForKey:@"entityField"]];
             } else if ([attribute objectForKey:@"beanName"]) {
                 NSString *newBean = [attribute objectForKey:@"beanName"];
                 NSString *newEntity = [self entityNameFromBeanName:newBean];
@@ -131,7 +129,7 @@
                     entityProp = [attribute objectForKey:@"entityFieldFk"];
                     pred = [NSPredicate predicateWithFormat:@"%K == %@", entityProp, [manObj valueForKey:@"a_id"]];
                 }
-                beanValue = [self mapEntities:[self execSubQueryInEntity:newEntity withPredicate:pred propertyToExtract:nil] intoBeanName:newBean];
+                beanValue = [self mapEntities:[self execSubQueryOfEntity:newEntity inContext:ctx withPredicate:pred propertyToExtract:nil] intoBeanName:newBean withContext:ctx];
 
             } else if ([attribute objectForKey:@"entityField"]) {
                 entityProp = [attribute objectForKey:@"entityField"];
@@ -212,11 +210,10 @@
     free(typeEncoding);
 }
 
-- (id)execSubQueryInEntity:(NSString *)entityName withPredicate:(NSPredicate *)predicate propertyToExtract:(NSString *)propertyName
+- (id)execSubQueryOfEntity:(NSString *)entityName inContext:(NSManagedObjectContext *)ctx withPredicate:(NSPredicate *)predicate propertyToExtract:(NSString *)propertyName
 {
-    ZOFMocController *moc = [ZOFMocController sharedInstance];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName
-                                              inManagedObjectContext:moc.managedObjectContext];
+                                              inManagedObjectContext:ctx];
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     [request setEntity:entity];
     
@@ -225,7 +222,7 @@
     }
     
     NSError *error = nil;
-    NSArray *results = [moc.managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *results = [ctx executeFetchRequest:request error:&error];
     
     if (error != nil) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);

@@ -12,6 +12,7 @@
 #import "ZOFPersonBean.h"
 #import "ZOFAddressBean.h"
 #import "ZOFAddressTypeBean.h"
+#import "ZOFTestViewController.h"
 
 @interface ZOFMasterViewController () {
     NSArray *persons;
@@ -32,7 +33,9 @@
     _serviceDb = [ZOFServiceDb sharedInstance];
     
  	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *testBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(loadTestViewController:)];
+    self.navigationItem.leftBarButtonItems = @[self.editButtonItem, testBtn];
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
@@ -41,7 +44,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    persons = [_serviceDb fetchBeanName:@"ZOFPersonBean" withPredicate:[NSPredicate predicateWithFormat:@"%K == %@", @"lastEvent", @"Videochat su Facebook"]];
+    persons = [_serviceDb fetchBeanName:@"ZOFPersonBean" inContext:nil withPredicate:nil];
+    //persons = [_serviceDb fetchBeanName:@"ZOFPersonBean" withPredicate:[NSPredicate predicateWithFormat:@"%K == %@", @"lastEvent", @"Videochat su Facebook"]];
     
     //persons = [_serviceDb fetchBeanName:@"ZOFAddressBean" predicateWithSubstitutionVariables:[NSDictionary dictionaryWithObject:@"2" forKey:@"addrType"]];
     //persons = [_serviceDb fetchBeanName:@"ZOFAddressTypeBean" withPredicate:nil];
@@ -60,7 +64,7 @@
 
 - (void)insertNewObject:(id)sender
 {
-    ZOFAddressTypeBean *type = [_serviceDb fetchBeanName:@"ZOFAddressTypeBean" withPredicate:[NSPredicate predicateWithFormat:@"%K == %@", @"type", @"Residenza"]];
+    ZOFAddressTypeBean *type = [_serviceDb fetchBeanName:@"ZOFAddressTypeBean" inContext:nil  withPredicate:[NSPredicate predicateWithFormat:@"%K == %@", @"type", @"Residenza"]];
     
     
     ZOFAddressBean *addr = [[ZOFAddressBean alloc] init];
@@ -79,6 +83,12 @@
     
     NSError *err;
     [_serviceDb saveBean:p error:err];
+    [[self tableView] reloadData];
+}
+
+- (void)loadTestViewController:(id)sender
+{
+    [self performSegueWithIdentifier:@"testControllerSegue" sender:self];
 }
 
 #pragma mark - Table View
@@ -126,6 +136,8 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         ZOFPersonBean *object = [persons objectAtIndex:indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+    } else if ([[segue identifier] isEqualToString:@"testControllerSegue"]) {
+        [[segue destinationViewController] setServiceDb:_serviceDb];
     }
 }
 
